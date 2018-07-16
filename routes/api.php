@@ -26,9 +26,19 @@ Route::prefix('v1')->group(function () {
         ]);
     })->name('serverStatus');
 
-    Route::get('roles', 'RoleController@index')->name('roleIndex');
+    Route::group([
 
-    Route::prefix('auth')->group(function() {
+        'middleware' => 'api',
+        'prefix' => 'auth'
+
+    ], function ($router) {
+
+        Route::post('login', 'AuthController@login');
+        Route::post('logout', 'AuthController@logout');
+        Route::post('refresh', 'AuthController@refresh');
+        Route::post('me', 'AuthController@me');
         Route::post('register', 'ProfileController@store')->name('authRegister');
     });
+
+    Route::get('roles', 'RoleController@index')->name('roleIndex');
 });

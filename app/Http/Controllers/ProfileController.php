@@ -17,6 +17,11 @@ use App\Mail\RegisterSuccessfully;
 
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['store']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
