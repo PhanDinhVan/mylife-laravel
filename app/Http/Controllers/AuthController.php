@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\Controller;
-
-use App\User;
+use App\Http\Resources\User as UserResource;
 
 class AuthController extends Controller
 {
@@ -33,7 +29,9 @@ class AuthController extends Controller
             return response()->json(['error' => 'Unauthorized'], 401);
         }
 
-        return $this->respondWithToken($token);
+        $user = auth()->user();
+
+        return $this->respondUserWithToken(new UserResource($user), $token);
     }
 
     /**
@@ -78,6 +76,16 @@ class AuthController extends Controller
     protected function respondWithToken($token)
     {
         return response()->json([
+            'access_token' => $token,
+            'token_type' => 'bearer',
+            'expires_in' => auth()->factory()->getTTL() * 60
+        ]);
+    }
+
+    protected function respondUserWithToken($user, $token)
+    {
+        return response()->json([
+            'user' => $user,
             'access_token' => $token,
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60
