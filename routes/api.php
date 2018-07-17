@@ -41,4 +41,16 @@ Route::prefix('v1')->group(function () {
     });
 
     Route::get('roles', 'RoleController@index')->name('roleIndex');
+
+
+    Route::group([
+        'middleware' => 'jwt.auth'
+    ], function ($router) {
+        // Company
+        Route::get('companies', 'API\CompanyController@index')->name('companies');
+
+        // Shop
+        Route::get('shop', 'API\ShopController@index')->name('shops');
+        Route::patch('shop/{id}', 'API\ShopController@update')->name('updateShops');
+    });
 });

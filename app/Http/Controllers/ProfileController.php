@@ -42,9 +42,9 @@ class ProfileController extends Controller
     {
         // Validate the request...
         $validatedData = Validator::make($request->all(), [
-            'email' => 'required|unique:users|max:255',
-            'fullname' => 'required',
-            'phone' => 'required'
+            'email' => 'bail|required|unique:users|max:255',
+            'fullname' => 'bail|required',
+            'phone' => 'bail|required'
         ]);
 
         if ($validatedData->fails()) {
