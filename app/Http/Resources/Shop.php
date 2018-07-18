@@ -23,7 +23,10 @@ class Shop extends JsonResource
             'lat'       => $this->lat,
             'lng'       => $this->lng,
             'image'     => $this->image,
-            'type'      => $this->company->type
+            'type'      => $this->company->type,
+            'openTime'  => json_decode($this->openTime || '{}'),
+            'creditCard'=> $this->creditCard,
+            'wifi'      => $this->wifi
         ];
     }
 }
