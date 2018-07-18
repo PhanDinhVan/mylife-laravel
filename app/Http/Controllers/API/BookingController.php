@@ -21,7 +21,24 @@ class BookingController extends Controller
      */
     public function index()
     {
-        //
+        $userId = auth()->user()->id;
+
+        $booking = [];
+
+        if ($userId) {
+            $booking = Booking::where('userId', $userId)->get();
+        } else {
+            $booking = Booking::all();
+        }
+
+        foreach ($booking as $book) {
+            $book->user();
+            $book->shop();
+        }
+
+        return response()->json([
+            'booking' => $booking
+        ]);
     }
 
     /**
@@ -64,7 +81,9 @@ class BookingController extends Controller
 
         $booking->save();
 
-        return $booking;
+        return response()->json([
+            'booking' => $booking
+        ]);
     }
 
     /**
