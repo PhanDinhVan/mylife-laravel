@@ -21,7 +21,7 @@ class CreateBookingTable extends Migration
             $table->date('date');
             $table->time('time');
             $table->integer('numberPerson');
-            $table->longText('extraData');
+            $table->longText('extraData')->nullable();
             $table->timestamps();
             $table->softDeletes();
 

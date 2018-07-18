@@ -52,6 +52,9 @@ Route::prefix('v1')->group(function () {
         // Shop
         Route::get('shop', 'API\ShopController@index')->name('shops');
         Route::patch('shop/{id}', 'API\ShopController@update')->name('updateShops');
+
+        // Booking
+        Route::post('booking', 'API\BookingController@store')->name('createBooking');
     });
 
     Route::group([
