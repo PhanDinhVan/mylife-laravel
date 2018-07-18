@@ -24,7 +24,7 @@ class Shop extends JsonResource
             'lng'       => $this->lng,
             'image'     => $this->image,
             'type'      => $this->company->type,
-            'openTime'  => json_decode($this->openTime || '{}'),
+            'openTime'  => json_decode($this->openTime),
             'creditCard'=> $this->creditCard,
             'wifi'      => $this->wifi
         ];
