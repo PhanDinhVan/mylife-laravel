@@ -53,4 +53,13 @@ Route::prefix('v1')->group(function () {
         Route::get('shop', 'API\ShopController@index')->name('shops');
         Route::patch('shop/{id}', 'API\ShopController@update')->name('updateShops');
     });
+
+    Route::group([
+        'middleware' => 'jwt.auth',
+        'prefix' => 'admin'
+    ], function ($router) {
+        // User
+        Route::get('users', 'API\UserController@index')->name('users');
+
+    });
 });
