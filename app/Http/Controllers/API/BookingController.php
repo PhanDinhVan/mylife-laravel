@@ -32,8 +32,8 @@ class BookingController extends Controller
         }
 
         foreach ($booking as $book) {
-            $book->user();
-            $book->shop();
+            $book->user;
+            $book->shop;
         }
 
         return response()->json([

@@ -79,7 +79,7 @@ class ShopController extends Controller
             $filename = $id . '.' . $photo->extension();
             $photo->storeAs($path, $filename);
 
-            $shop->image = 'storage/app/' . $path . '/' . $filename;
+            $shop->image = 'storage/app/public/' . $path . '/' . $filename;
         }
 
         $input = $request->all();

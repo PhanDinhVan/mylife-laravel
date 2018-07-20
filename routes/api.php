@@ -18,7 +18,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::prefix('v1')->group(function () {
+Route::group([
+    'middleware' => 'cors',
+    'prefix' => 'v1'
+], function () {
     Route::get('status', function () {
         return response()->json([
             'version' => getenv('API_VERSION', '1.0'),
