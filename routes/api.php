@@ -59,6 +59,7 @@ Route::group([
         // Booking
         Route::get('booking', 'API\BookingController@index')->name('getBooking');
         Route::post('booking', 'API\BookingController@store')->name('createBooking');
+        Route::patch('booking/{id}', 'API\BookingController@update')->name('updateSBooking');
     });
 
     Route::group([
@@ -67,6 +68,5 @@ Route::group([
     ], function ($router) {
         // User
         Route::get('users', 'API\UserController@index')->name('users');
-
     });
 });

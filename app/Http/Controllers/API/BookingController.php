@@ -19,14 +19,27 @@ class BookingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $userId = auth()->user()->id;
+        $type = $request->get('type', null);
 
         $booking = [];
 
         if ($userId) {
-            $booking = Booking::where('userId', $userId)->get();
+            $query = Booking::query();
+
+            $query = $query->where('userId', $userId);
+            if ($type) {
+                $query->whereHas('shop', function ($query) use ($type) {
+                    $query->whereHas('company', function ($query) use ($type) {
+                        $query->where('type', $type);
+                    });
+                });
+            }
+
+            $booking = $query->orderBy('state', 'asc')->get();
+
         } else {
             $booking = Booking::all();
         }
@@ -104,9 +117,27 @@ class BookingController extends Controller
      * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Booking $booking)
+    public function update(Request $request, $id)
     {
-        //
+        $booking = Booking::findOrFail($id);
+
+        $input = $request->all();
+
+        $validField = $booking->fillable;
+
+        foreach ($input as $key=>$data) {
+            if (in_array($key, $validField)) {
+                if ($key == 'date') {
+                    $booking[$key] = date("Y-m-d", strtotime($data));
+                } else {
+                    $booking[$key] = $data;
+                }
+            }
+        }
+
+        $booking->save();
+
+        return $booking;
     }
 
     /**
