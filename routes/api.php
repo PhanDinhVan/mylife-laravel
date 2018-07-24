@@ -60,6 +60,14 @@ Route::group([
         Route::get('booking', 'API\BookingController@index')->name('getBooking');
         Route::post('booking', 'API\BookingController@store')->name('createBooking');
         Route::patch('booking/{id}', 'API\BookingController@update')->name('updateSBooking');
+
+        // Promotion
+        Route::get('promotion', 'API\PromotionController@index')->name('getPromotion');
+        Route::post('promotion', 'API\PromotionController@store')->name('createPromotion');
+
+        // News
+        Route::get('news', 'API\NewsController@index')->name('getNews');
+        Route::post('news', 'API\NewsController@store')->name('createNews');
     });
 
     Route::group([
