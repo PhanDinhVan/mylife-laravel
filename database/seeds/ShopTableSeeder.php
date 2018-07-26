@@ -22,7 +22,8 @@ class ShopTableSeeder extends Seeder
             'image' => 'http://mylifecoffee.vn/storage/stores/December2017/9RYuHcKISmnc9ntr46Pe.jpg',
             'type' => 1,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'updated_at' => new DateTime(),
+            'openTime' => '{"mon-friday":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}],"weekend":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}]}'
         ]);
 
         DB::table('shop')->insert([
@@ -35,7 +36,8 @@ class ShopTableSeeder extends Seeder
             'image' => 'http://mylifecoffee.vn/storage/stores/December2017/fKnHaT403YeDMR2d3aq4.jpg',
             'type' => 1,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'updated_at' => new DateTime(),
+            'openTime' => '{"mon-friday":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}],"weekend":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}]}'
         ]);
 
         DB::table('shop')->insert([
@@ -48,7 +50,8 @@ class ShopTableSeeder extends Seeder
             'image' => 'http://mylifecoffee.vn/storage/stores/September2017/xqWtcMKGZIghx5WsA07D.jpg',
             'type' => 1,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'updated_at' => new DateTime(),
+            'openTime' => '{"mon-friday":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}],"weekend":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}]}'
         ]);
 
         DB::table('shop')->insert([
@@ -61,7 +64,8 @@ class ShopTableSeeder extends Seeder
             'image' => 'http://mylifecoffee.vn/storage/stores/September2017/qgzT3kPCkbPZWBRdCCdT.JPG',
             'type' => 1,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'updated_at' => new DateTime(),
+            'openTime' => '{"mon-friday":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}],"weekend":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}]}'
         ]);
 
         DB::table('shop')->insert([
@@ -74,7 +78,8 @@ class ShopTableSeeder extends Seeder
             'image' => 'http://mylifecoffee.vn/storage/stores/December2017/t2UfZzx7GojuUo2xZuVE.jpg',
             'type' => 1,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'updated_at' => new DateTime(),
+            'openTime' => '{"mon-friday":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}],"weekend":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}]}'
         ]);
 
         DB::table('shop')->insert([
@@ -87,7 +92,8 @@ class ShopTableSeeder extends Seeder
             'image' => 'http://mylifecoffee.vn/storage/stores/September2017/pz7UAZplAlXdopTKI7Ma.JPG',
             'type' => 1,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'updated_at' => new DateTime(),
+            'openTime' => '{"mon-friday":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}],"weekend":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}]}'
         ]);
 
         DB::table('shop')->insert([
@@ -100,7 +106,8 @@ class ShopTableSeeder extends Seeder
             'image' => 'http://mylifecoffee.vn/storage/stores/September2017/pz7UAZplAlXdopTKI7Ma.JPG',
             'type' => 2,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'updated_at' => new DateTime(),
+            'openTime' => '{"mon-friday":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}],"weekend":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}]}'
         ]);
 
         DB::table('shop')->insert([
@@ -113,7 +120,8 @@ class ShopTableSeeder extends Seeder
             'image' => 'http://mylifecoffee.vn/storage/stores/September2017/pz7UAZplAlXdopTKI7Ma.JPG',
             'type' => 2,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'updated_at' => new DateTime(),
+            'openTime' => '{"mon-friday":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}],"weekend":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}]}'
         ]);
 
         DB::table('shop')->insert([
@@ -126,7 +134,8 @@ class ShopTableSeeder extends Seeder
             'image' => 'http://mylifecoffee.vn/storage/stores/September2017/pz7UAZplAlXdopTKI7Ma.JPG',
             'type' => 2,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'updated_at' => new DateTime(),
+            'openTime' => '{"mon-friday":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}],"weekend":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}]}'
         ]);
 
         DB::table('shop')->insert([
@@ -139,7 +148,8 @@ class ShopTableSeeder extends Seeder
             'image' => 'http://mylifecoffee.vn/storage/stores/September2017/pz7UAZplAlXdopTKI7Ma.JPG',
             'type' => 2,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'updated_at' => new DateTime(),
+            'openTime' => '{"mon-friday":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}],"weekend":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}]}'
         ]);
 
         DB::table('shop')->insert([
@@ -152,7 +162,8 @@ class ShopTableSeeder extends Seeder
             'image' => 'http://mylifecoffee.vn/storage/stores/September2017/pz7UAZplAlXdopTKI7Ma.JPG',
             'type' => 3,
             'created_at' => new DateTime(),
-            'updated_at' => new DateTime()
+            'updated_at' => new DateTime(),
+            'openTime' => '{"mon-friday":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}],"weekend":[{"start":"10:30","end":"14:00"},{"start":"17:00","end":"22:00"}]}'
         ]);
     }
 }
