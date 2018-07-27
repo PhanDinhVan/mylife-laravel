@@ -18,24 +18,7 @@ class MenuCategoryController extends Controller
      */
     public function index(Request $request)
     {
-        $type = $request->get('type', null);
-
-        $shops = null;
-        if ($type) {
-            $company = Company::where('type', $type)->first();
-
-            $shops = Shop::where('type', $company->id)->get();
-        } else {
-            $shops = Shop::all();
-        }
-
-        foreach ($shops as $shop) {
-            $shop->company();
-        }
-
-        return response()->json([
-            'shops' => ShopResource::collection($shops)
-        ]);
+        //
     }
 
     /**
