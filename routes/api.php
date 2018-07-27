@@ -68,6 +68,13 @@ Route::group([
         // News
         Route::get('news', 'API\NewsController@index')->name('getNews');
         Route::post('news', 'API\NewsController@store')->name('createNews');
+
+        // Menu Category
+        Route::post('create-menu-category', 'API\MenuCategoryController@store')->name('createMenuCategory');
+
+        // Menu
+        Route::post('create-menu', 'API\MenuController@store')->name('createMenu');
+        Route::get('get-menu', 'API\MenuController@index')->name('getMenu');
     });
 
     Route::group([
