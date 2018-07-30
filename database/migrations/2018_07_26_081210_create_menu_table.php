@@ -25,7 +25,7 @@ class CreateMenuTable extends Migration
             $table->timestamps();
             $table->softDeletes();
             $table->foreign('companyId')->references('id')->on('company');
-            $table->foreign('menuCategoryId')->references('id')->on('menuCategory');
+            $table->foreign('menuCategoryId')->references('id')->on('menu_category');
         });
     }
 
