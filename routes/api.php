@@ -83,5 +83,8 @@ Route::group([
     ], function ($router) {
         // User
         Route::get('users', 'API\UserController@index')->name('users');
+        Route::delete('delete/{id}', 'API\UserController@destroy')->name('deleteUser');
+        Route::post('update', 'API\UserController@update')->name('updateUser');
+        Route::post('create', 'API\UserController@store')->name('createUser');
     });
 });
