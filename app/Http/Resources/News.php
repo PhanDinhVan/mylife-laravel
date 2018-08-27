@@ -22,7 +22,9 @@ class News extends JsonResource
             "image"=> $this->image,
             "status"=> $this->status,
             "created_at"=> $this->created_at,
-            "user"=> $this->user->email
+            "user"=> $this->user->email,
+            "publishDate"=> $this->publishDate,
+            "userName"=>$this->profile->name,
         ];
     }
 }

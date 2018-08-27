@@ -7,6 +7,8 @@ use App\Promotion;
 use App\Http\Resources\Promotion as PromotionResource;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 
 class PromotionController extends Controller
 {
@@ -38,8 +40,8 @@ class PromotionController extends Controller
         $validatedData = Validator::make($request->all(), [
             'name'      => 'required',
             'url'       => 'required',
-            'startDate' => 'date_format:d-m-Y',
-            'endDate'   => 'date_format:d-m-Y'
+            // 'startDate' => 'date_format:d-m-Y',
+            // 'endDate'   => 'date_format:d-m-Y'
         ]);
 
         if ($validatedData->fails()) {
@@ -70,6 +72,12 @@ class PromotionController extends Controller
             $path = 'images/promotion';
             $filename = time() . '.' . $photo->extension();
             $photo->storeAs($path, $filename);
+            $link = 'storage/app/public/' . $path;
+
+            // Storage::putFileAs('photos', new File('/public'), 'photo.jpg');
+            // Storage::disk('local')->put($filename, 'Contents');
+            // Storage::disk('s3')->put('avatars/1', $filename);
+            // Storage::disk('uploads')->put($filename, 'filename');
 
             $promotion->image = 'storage/app/public/' . $path . '/' . $filename;
         }
@@ -79,6 +87,7 @@ class PromotionController extends Controller
         return response()->json([
             'promotion' => $promotion
         ]);
+
     }
 
     /**

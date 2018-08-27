@@ -125,6 +125,8 @@ class BookingController extends Controller
 
         $validField = $booking->fillable;
 
+        $booking->state = $request->status;
+
         foreach ($input as $key=>$data) {
             if (in_array($key, $validField)) {
                 if ($key == 'date') {

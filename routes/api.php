@@ -68,6 +68,8 @@ Route::group([
         // News
         Route::get('news', 'API\NewsController@index')->name('getNews');
         Route::post('news', 'API\NewsController@store')->name('createNews');
+        Route::post('update', 'API\NewsController@update')->name('updateNews');
+        Route::delete('delete/{id}', 'API\NewsController@destroy')->name('deleteNews');
 
         // Menu Category
         Route::post('create-menu-category', 'API\MenuCategoryController@store')->name('createMenuCategory');

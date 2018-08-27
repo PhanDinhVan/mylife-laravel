@@ -11,7 +11,7 @@ class Shop extends Model
 
     protected $table = 'shop';
 
-    public $fillable = ['name', 'phone', 'address', 'district', 'lat', 'lng', 'image', 'type', 'openTime', 'creditCard', 'wifi'];
+    public $fillable = ['name', 'phone', 'address','ward', 'district', 'city', 'lat', 'lng', 'image', 'type', 'openTime', 'creditCard', 'wifi'];
 
     protected $dates = ['deleted_at'];
 

@@ -9,9 +9,9 @@ class Menu extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'menu';
+    protected $table = 'menu_item';
 
-    public $fillable = ['title', 'description', 'price', 'companyId', 'menuCategoryId', 'image'];
+    public $fillable = ['description', 'price', 'companyId', 'menuCategoryId', 'image'];
 
     protected $dates = ['deleted_at'];
 

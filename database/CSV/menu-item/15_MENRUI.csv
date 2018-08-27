@@ -1,0 +1,32 @@
+,ME1,Kamonanban zaru soba,Duck breast broth with cold soba noodle,鴨南蛮 ざるそば,Ức vịt hầm với mì soba lạnh,,,,148000,,2,15,NULL,NULL,NULL
+,ME2,Kamonanban cha soba,Duck breast broth with cold matcha soba noodle,南蛮ざる茶そば,Ức vịt hầm với mì soba trà xanh lạnh,,,,158000,,2,15,NULL,NULL,NULL
+,ME3,Zaru soba,Cold soba noodle,ざるそば/ざる茶そば,Mì soba lạnh,,,,88000,,2,15,NULL,NULL,NULL
+,ME4,Zaru cha soba,Cold matcha soba noodle,ざる茶そば,Mì soba trà xanh lạnh,,,,98000,,2,15,NULL,NULL,NULL
+,ME5,Tenzaru soba,Shrimp tempura with cold soba noodle,天ざるそば/ ざる茶そば,Tôm chiên và mì soba lạnh,,,,128000,,2,15,NULL,NULL,NULL
+,ME6,Tenzaru cha soba,Shrimp tempura with cold matcha soba noodle,天 ざる茶そば,Tôm chiên và mì soba trà xanh lạnh,,,,138000,,2,15,NULL,NULL,NULL
+,ME9,Niku soba,Beef soba noodle soup,肉そば温かい,Mì soba thịt bò,,,,138000,,2,15,NULL,NULL,NULL
+,ME10,Goma Kamonanban zaru soba ,Sesame Duck breast with cold soba noodle ,ごま味の鴨南蛮ざるそば/ざる茶そば,Ức vịt sốt mè với mì soba lạnh,,,,148000,,2,15,NULL,NULL,NULL
+,ME11,Goma Kamonanban cha soba,Sesame duck breast with cold matcha soba noodle,ごま味鴨南蛮ざる茶そば,Ức vịt sốt mè với mì soba trà xanh lạnh,,,,158000,,2,15,NULL,NULL,NULL
+,ME12,Zaru udon,Cold udon noodle,ざるうどん,Mì udon lạnh,,,,88000,,2,15,NULL,NULL,NULL
+,ME13,Niku udon,Beef udon noodle soup,肉うどん,Mì bò udon,,,,128000,,2,15,NULL,NULL,NULL
+,ME14,Tori corn udon,Corn and chicken udon noodle soup,コーン入り鳥うどん,Mì udon gà chiên sốt và bắp,,,,118000,,2,15,NULL,NULL,NULL
+,ME15,Ebiten Udon,Udon noodle soup with shrimp tempura,えび天ぷらうどん,Mì udon và tôm chiên,,,,138000,,2,15,NULL,NULL,NULL
+,ME16,Nabeyaki udon,All-in-one udon noodle soup,鍋焼きうどん,Mì udon thập cẩm,,,,148000,,2,15,NULL,NULL,NULL
+,,Sukiyaki udon,Sukiyaki hotpot for 1 person,すき焼きうどん,,,,,,,2,15,NULL,NULL,NULL
+,ME17,(Binfun),USA Beef Short plate,USA牛のばら肉,Ba chỉ bò Mỹ,,,,148000,,2,15,NULL,NULL,NULL
+,ME18,(Udon),,,,,,,148000,,2,15,NULL,NULL,NULL
+,ME19,(Binfun),USA Beef Chuck Eyeroll,USA牛の肩ロース肉,Nạc vai bò Mỹ,,,,158000,,2,15,NULL,NULL,NULL
+,ME20,(Udon),,,,,,,158000,,2,15,NULL,NULL,NULL
+,ME21,(Binfun),AUS Wagyu tenderloin,AUS和牛のテンダーロイン,Thăn nội bò wagyu Úc,,,,298000,,2,15,NULL,NULL,NULL
+,ME22,(Udon),,,,,,,298000,,2,15,NULL,NULL,NULL
+,ME23,(Binfun),Japan wagyu sirloin,和牛のサーロイン,Thăn ngoại bò wagyu Nhật,,,,548000,,2,15,NULL,NULL,NULL
+,ME24,(Udon),,,,,,,548000,,2,15,NULL,NULL,NULL
+,ME25,Spicy miso nikomi udon,Seafood udon noodle with spicy miso soup,スパイシー味噌煮込みうどん,Mì udon nấu miso cay thập cẩm,,,,148000,,2,15,NULL,NULL,NULL
+,ME26,Buta kimuchi udon,Pork & kimchi udon noodle soup,豚キムチうどん,Mì udon nấu cay với thịt heo và kimchi,,,,138000,,2,15,NULL,NULL,NULL
+,ME27,Kaisen yaki udon,Stir fried udon noodle with seafood,海鮮焼きうどん,Mì udon xào hải sản,,,,148000,,2,15,NULL,NULL,NULL
+,ME28,Yasai Yaki udon,Stir fried udon noodle with vegetables,野菜の焼きうどん,Mì udon xào rau,,,,108000,,2,15,NULL,NULL,NULL
+,,Kake Udon,Udon noodle,かけうどん,Mì udon,,,,78000,,2,15,NULL,NULL,NULL
+,,Yaki Buta Ramen ,Grilled pork ramen,焼き豚ラーメン,Mì ramen với thịt heo,,,,298000,,2,15,NULL,NULL,NULL
+,,Spicy Ramen Hotate,Spicy Scallop Ramen,スパイシーホタテラーメン,Mì ramen với sò điệp sốt cay,,,,228000,,2,15,NULL,NULL,NULL
+,,Sake Ikura Ramen,Salmon with salmon roe ramen,鮭いくらラーメン,Mì ramen với cá hồi và trứng cá hồi,,,,248000,,2,15,NULL,NULL,NULL
+,,Kake Soba,Soba noodle,かけそば,Mì soba,,,,78000,,2,15,NULL,NULL,NULL

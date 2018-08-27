@@ -1,0 +1,36 @@
+,TS17,Tonkatsu,Deep fried pork cutlet,とんかつセット,Set phi lê thịt heo chiên giòn,,,,,,2,,NULL,NULL,NULL
+,TS4,Buta okura set,Grilled pork wrapped okra set,ブタオクラセット,Set thịt heo nướng cuộn đậu bắp,,,,,,2,,NULL,NULL,NULL
+,TS3,Tori teriyaki set,Grilled teriyaki chicken set,鶏照り焼きセット,Set thịt gà nướng sốt teriyaki,,,,,,2,,NULL,NULL,NULL
+,TS18,Kamo muneniku yaki set,Grilled duck breast set,あひる焼き,Set ức vịt nướng sốt,,,,,,2,,NULL,NULL,NULL
+,TS6,Sanma shioyaki set,Grilled sanma fish with salt set,サバ塩セット,Set cá sanma nướng muối,,,,,,2,,NULL,NULL,NULL
+,TS12/TS13,Hokke shioyaki/misoyaki set,Grilled hokke fish with salt/ with miso set,ほっけ塩焼きセット,Set cá hokke nướng muối/ nướng sốt miso,,,,,,2,,NULL,NULL,NULL
+,TS5/TS7,Saba shioyaki/teriyaki set,Grilled saba fish fillet with salt/with teriyaki sauce set,サバ塩セット,Set cá saba nướng muối/ nướng sốt teriyaki,,,,,,2,,NULL,NULL,NULL
+,TS16,Saba misoyaki,Grilled saba fish fillet with miso sauce set,,Set cá saba nướng sốt miso,,,,,,2,,NULL,NULL,NULL
+,TS19/TS20,Amadai shioyaki/misoyaki set,Grilled horsehead fish with salt/with miso sauce set,アマダイ塩焼きセット,Set cá đầu vuông nướng muối/nướng sốt miso,,,,,,2,,NULL,NULL,NULL
+,TS1,Tori teriyaki don set,Teriyaki chicken rice bowl set,照り鳥丼,Set cơm thịt gà sốt teriyaki,,,,,,2,,NULL,NULL,NULL
+,TS9,Katsu don set,Fried pork and eggs rice bowl set,カツ丼セット,Set cơm thịt heo chiên trứng,,,,,,2,,NULL,NULL,NULL
+,TS8,Chirashizushi set,Assorted sashimi on sushi rice bowl set,鮭テッカ丼,Set cơm trộn cá hồi với cải mầm,,,,,,2,,NULL,NULL,NULL
+,TS10,Spicy sake yakimeshi set,Spicy salmon fried rice set,スパイシー鮭焼き飯セット,Set cơm chiên cá hồi cay,,,,,,2,,NULL,NULL,NULL
+,TS2,Sushi set,"Salmon, tuna, eggs nigiri & orka gunkan with steamed eggs",寿司セットランチ,"Set cơm cuộn cá hồi, cá ngừ, trứng và đậu bắp kèm trứng hấp",,,,,,2,,NULL,NULL,NULL
+,TS14,Aburi nigiri set,Mixed aburi nigiri set,炙り寿司盛り合せセット,Set cơm nắm cá nướng tổng hợp,,,,,,2,,NULL,NULL,NULL
+,TS15,Hotate don set,Grilled scallop rice bowl set,照り鳥丼,Set cơm sò điệp nướng,,,,,,2,,NULL,NULL,NULL
+,TS11,Ikura don set,Salmon sashimi & Japanese omelette with salmon roe rice bowl set,いくら丼セット,"Set cơm cá hồi, trứng ngọt và trứng cá hồi",,,,,,2,,NULL,NULL,NULL
+,B1,Sushi bento,Sushi combo,寿司弁当,Bento cơm cuộn,,,,,,2,,NULL,NULL,NULL
+,B4,Tori teri bento,Grilled teriyaki chicken combo,,Bento gà nướng sốt teriyaki,,,,,,2,,NULL,NULL,NULL
+,B5,Tonkatsu bento,Fried pork cutlet combo,,Bento phi lê thịt heo chiên giòn,,,,,,2,,NULL,NULL,NULL
+,B2,Yaki udon bento,Stir fried noodle with grilled shrimp combo,焼きそば弁当,Bento mì udon xào với tôm nướng,,,,,,2,,NULL,NULL,NULL
+,B3,Saba yaki bento,Grilled teriyaki saba fillet combo,焼きサバ弁当,Bento cá sapa nướng sốt teriyaki,,,,,,2,,NULL,NULL,NULL
+,B6,Sake yaki bento,Grilled salmon fillet combo,,Bento cơm cá hồi nướng,,,,,,2,,NULL,NULL,NULL
+,B7,Unagi yaki bento,Grilled Japanese sea eel combo,,Bento cơm lươn Nhật nướng,,,,,,2,,NULL,NULL,NULL
+,ME12,Nabeyaki udon,All-in-one udon noodle soup,なべ焼きうどん,Mì udon thập cẩm,,,,,,2,,NULL,NULL,NULL
+,ME30,Spicy miso kaisen udon,Spicy miso seafood udon noodle soup,味噌煮込みうどん,Mì udon nấu miso cay thập cẩm,,,,,,2,,NULL,NULL,NULL
+,ME21,Buta kimchi udon,Spicy pork & kimchi udon noodle soup,牛肉とキムチとク ックスパイシーうど,Mì udon nấu cay với thịt heo và kimchi,,,,,,2,,NULL,NULL,NULL
+,ME15,Ebitem udon,Udon noodle soup with shrimp tempura ,海老天ぷらうどん,Mì udon và tôm chiên,,,,,,2,,NULL,NULL,NULL
+,ME33,Goma Kamonanban zaru soba,Sesame duck breast with cold soba noodle,ごまソースかもにくそば,Ức vịt sốt mè với mì soba lạnh,,,,,,2,,NULL,NULL,NULL
+,ME34,Goma kamonanban cha soba,Sesame duck breast with cold matcha soba noodle,,Ức vịt sốt mè với mì soba trà xanh lạnh,,,,,,2,,NULL,NULL,NULL
+,ME1,Zaru tori soba,Cold soba noodle with chicken and egg yolk,冷たい緑茶そばと鶏肉と卵,Mì soba lạnh với thịt gà và trứng,,,,,,2,,NULL,NULL,NULL
+,ME2/ME16,Zaru tori cha soba/udon,Cold matcha soba noodle with chicken and egg yolk,,Mì soba trà xanh lạnh với thịt gà và trứng,,,,,,2,,NULL,NULL,NULL
+,ME3,Tenzaru soba,Shrimp tempura with cold soba noodle,天ざるそば,Tôm chiên và mì soba lạnh,,,,,,2,,NULL,NULL,NULL
+,ME4,Tenzaru cha soba,Shrimp tempura with cold matcha soba noodle,茶そば,Tôm chiên và mì soba trà xanh lạnh,,,,,,2,,NULL,NULL,NULL
+,ME31,Kamonanban zaru soba,Duck breast broth with cold soba noodle,かもにくざるそば,Ức vịt hầm với mì soba lạnh,,,,,,2,,NULL,NULL,NULL
+,ME32,Kamonanban cha soba,Duck breast broth with cold matcha soba noodle,茶そば,Ức vịt hầm với mì soba trà xanh lạnh,,,,,,2,,NULL,NULL,NULL

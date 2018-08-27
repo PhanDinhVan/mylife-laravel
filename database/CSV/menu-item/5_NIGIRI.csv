@@ -1,0 +1,24 @@
+,NI1,Sake,Salmon,サーモン,Cơm nắm với cá hồi,,,,48000,,2,5,NULL,NULL,NULL
+,NI2,Maguro,Tuna,まぐろ,Cơm nắm với cá ngừ,,,,48000,,2,5,NULL,NULL,NULL
+,NI3,Kanpachi,Yellowtail,かんぱち,Cơm nắm với cá cam,,,,98000,,2,5,NULL,NULL,NULL
+,NI5,Hokkigai,Atlantic surf clam,ほっき貝,Cơm nắm với sò đỏ,,,,78000,,2,5,NULL,NULL,NULL
+,NI6,Ebi tempura,Shrimp tempura,えび天ぷら,Cơm nắm với tôm chiên tempura,,,,58000,,2,5,NULL,NULL,NULL
+,NI7,Ebi,Shrimp,えび,Cơm nắm với tôm,,,,58000,,2,5,NULL,NULL,NULL
+,NI8,Tako,Octopus,たこ,Cơm nắm với bạch tuộc,,,,68000,,2,5,NULL,NULL,NULL
+,NI9,Ika,Squid,いか,Cơm nắm với mực,,,,38000,,2,5,NULL,NULL,NULL
+,NI10,Kani,Crab stick,かに,Cơm nắm với thanh cua,,,,48000,,2,5,NULL,NULL,NULL
+,NI11,Tamago,Japanese omelette,玉子焼き,Cơm nắm với trứng,,,,28000,,2,5,NULL,NULL,NULL
+,NI12,Avacado,Avacado,アボカド,Cơm nắm với bơ,1,,,38000,,2,5,NULL,NULL,NULL
+,NI13,Unagi,Grilled Japanese eel,うなぎ,Cơm nắm với lươn Nhật,,,,98000,,2,5,NULL,NULL,NULL
+,NI14,Hotate Aburi,Grilled scallop,ほたての炙り,Cơm nắm với sò điệp nướng,,,,98000,,2,5,NULL,NULL,NULL
+,NI18,Sake harassu Aburi,Grilled salmon,鮭ハラスの炙り,Cơm nắm với cá hồi nướng,,,,58000,,2,5,NULL,NULL,NULL
+,NI19,Sake mentai Aburi,Grilled salmon with mentaiko,鮭と明太子の炙り,Cơm nắm với cá hồi và trứng cá tuyết nướng,,,,98000,,2,5,NULL,NULL,NULL
+,NI20,ebi uni Aburi ,Grilled shrimp with sea urchin,えびとうにの炙り,Cơm nắm với tôm nướng và nhum biển Nhật,,,,118000,,2,5,NULL,NULL,NULL
+,NI21,Kue Uni Aburi,Grilled grouper with sea urchin,クエとうにの炙り,Cơm nắm với cá mú nướng và nhum biển Nhật,,,,148000,,2,5,NULL,NULL,NULL
+,NI22,Shishamo yaki,Grilled shishamo smelt,焼きししゃも,Cơm nắm với cá trứng nướng,,,,48000,,2,5,NULL,NULL,NULL
+,NI23,Foie Gras,Foie Gras,フォアグラ,Cơm nắm với gan ngỗng,,,,138000,,2,5,NULL,NULL,NULL
+,NI24,Gyu Aburi ,Grilled Beef,牛の炙り,Cơm nắm với bò nướng tái,,,,78000,,2,5,NULL,NULL,NULL
+,,Aburi Sushi moriawase,Assorted aburi sushi,炙り寿司盛り合わせ,Set aburi sushi Tổng hợp,,,,898000,,2,5,NULL,NULL,NULL
+,NI15,Shiromi Harasu aburi,Grilled white fish and rice,白身ハラスの炙り,Cơm nắm với cá trắng nướng tái,,,,98000,,2,5,NULL,NULL,NULL
+,,Shiromi Mentai aburi,Grilled white fish with mentaiko and rice,白身と明太子の炙り,Cơm nắm với cá trắng nướng tái sốt trứng cá tuyết,,,,118000,,2,5,NULL,NULL,NULL
+,,Ama ebi,Japanese Sweet Shrimp,甘エビ,Cơm nắm với tôm Nhật,,,,98000,,2,5,NULL,NULL,NULL

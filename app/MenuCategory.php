@@ -9,7 +9,7 @@ class MenuCategory extends Model
 {
     use SoftDeletes;
 
-    protected $table = 'menu_category';
+    protected $table = 'menu_item_category';
 
     public $fillable = ['description'];
 

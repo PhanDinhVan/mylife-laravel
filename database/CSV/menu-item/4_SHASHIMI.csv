@@ -1,0 +1,66 @@
+,SA3,Maguro - S,Tuna - S,まぐろ,Cá ngừ - S,,,,98000,,2,4,NULL,NULL,NULL
+,SA2,Maguro – L,Tuna – L,まぐろ,Cá ngừ - L,,,,128000,,2,4,NULL,NULL,NULL
+,SA4,Komochi nishin - S,Yellow herring – S,子持ちにしん,Cá trích vàng - S,,,,118000,,2,4,NULL,NULL,NULL
+,SA5,Komochi nishin – L,Yellow herring – L,子持ちにしん,Cá trích vàng - L,,,,188000,,2,4,NULL,NULL,NULL
+,SA6,Sake - S,Salmon - S,サーモン,Cá hồi - S,,,,98000,,2,4,NULL,NULL,NULL
+,SA7,Sake – L,Salmon – L,サーモン,Cá hồi - L,,,,128000,,2,4,NULL,NULL,NULL
+,SA8,Spicy sake - S,Salmon sashimi with spicy sauce – S,スパイシーサーモン,Cá hồi sốt cay - S,,,,98000,,2,4,NULL,NULL,NULL
+,SA9,Spicy sake – L,Salmon sashimi with spicy sauce – L,スパイシーサーモン,Cá hồi sốt cay - L,,,,128000,,2,4,NULL,NULL,NULL
+,SA10,Komochi nishin wasabi - S,Wasabi herring – S,子持ちにしんわさび味,Cá trích xanh - S,,,,118000,,2,4,NULL,NULL,NULL
+,SA11,Komochi nishin wasabi – L,Wasabi herring – L,子持ちにしんわさび味,Cá trích xanh - L,,,,188000,,2,4,NULL,NULL,NULL
+,SA12,Aka Komochi nishin - S,Red herring – S,赤子持ちにしん,Cá trích đỏ - S,,,,118000,,2,4,NULL,NULL,NULL
+,SA13,Aka Komochi nishin – L,Red herring – L,赤子持ちにしん,Cá trích đỏ - L,,,,188000,,2,4,NULL,NULL,NULL
+,SA14,Toro Sake - S,Salmon belly – S,とろサーモン,Bụng cá hồi - S,,,,98000,,2,4,NULL,NULL,NULL
+,SA15,Toro Sake – L,Salmon belly – L,とろサーモン,Bụng cá hồi - L,,,,128000,,2,4,NULL,NULL,NULL
+,SA16,Spicy toro sake - S,Salmon belly sashimi with spicy sauce – S,スパイシーとろサーモン,Bụng cá hồi sốt cay - S,,,,98000,,2,4,NULL,NULL,NULL
+,SA17,Spicy toro sake – L,Salmon belly sashimi with spicy sauce – L,スパイシーとろサーモン,Bụng cá hồi sốt cay - L,,,,138000,,2,4,NULL,NULL,NULL
+,,Maguro Otoro – S,Japanese fat tuna belly – S,マグロ　大とろ,Bụng cá ngừ Nhật - S,,,,,,2,4,NULL,NULL,NULL
+,SA18,Maguro Otoro - L,Japanese fat tuna belly – L,マグロ　大とろ,Bụng cá ngừ Nhật - L,,,,688000,,2,4,NULL,NULL,NULL
+,SA19,Kanpachi - S,Yellowtail – S,かんぱち,Cá cam - S,,,,168000,,2,4,NULL,NULL,NULL
+,SA20,Kanpachi – L,Yellowtail – L,かんぱち,Cá cam - L,,,,238000,,2,4,NULL,NULL,NULL
+,SA23,Tako - S,Japanese octopus – S,たこ,Bạch tuộc Nhật - S,,,,118000,,2,4,NULL,NULL,NULL
+,SA24,Tako – L,Japanese octopus – L,たこ,Bạch tuộc Nhật - L,,,,198000,,2,4,NULL,NULL,NULL
+,SA26,Mekajiki - S,Swordfish belly – S,めかじき,Bụng cá kiếm - S,,,,128000,,2,4,NULL,NULL,NULL
+,SA25,Mekajiki – L,Swordfish belly – L,めかじき,Bụng cá kiếm - L,,,,198000,,2,4,NULL,NULL,NULL
+,SA27,Toro Kanpachi - S,Yellowtail belly – S,とろ　かんぱち,Bụng cá cam - S,,,,188000,,2,4,NULL,NULL,NULL
+,SA28,Toro Kanpachi – L,Yellowtail belly – L,とろ　かんぱち,Bụng cá cam - L,,,,298000,,2,4,NULL,NULL,NULL
+,SA29,Sugi - S,Cobia – S,すぎ,Cá bóp - S,,,,98000,,2,4,NULL,NULL,NULL
+,SA30,Sugi - S,Cobia – L,すぎ,Cá bóp - L,,,,138000,,2,4,NULL,NULL,NULL
+,SA32,Hokkigai - S,Atlantic surf clam – S,ほっき貝,Sò đỏ - S,,,,108000,,2,4,NULL,NULL,NULL
+,SA31,Hokkigai – L,Atlantic surf clam – L,ほっき貝,Sò đỏ - L,,,,168000,,2,4,NULL,NULL,NULL
+,SA36,Ika - S,Squid – S,いか,Mực - S,,,,68000,,2,4,NULL,NULL,NULL
+,SA35,Ika – L,Squid – L,いか,Mực - L,,,,108000,,2,4,NULL,NULL,NULL
+,SA37,Ikura,Salmon roe,いくら,Trứng cá hồi,,,,168000,,2,4,NULL,NULL,NULL
+,SA38,Tobiko,Flying fish roe,とびこ,Trứng cá chuồn,,,,128000,,2,4,NULL,NULL,NULL
+,SA39,Amaebi,Japanese sweet shrimp,甘えび,Tôm ngọt Nhật Bản,,,,268000,,2,4,NULL,NULL,NULL
+,SA40,Ika tobiko,Squid with flying fish roe,いかとびこ,Mực và trứng cá chuồn,,,,98000,,2,4,NULL,NULL,NULL
+,SA42,Hotate - S,Scallop – S,ほたて,Sò điệp - S,,,,88000,,2,4,NULL,NULL,NULL
+,SA41,Hotate – L,Scallop – L,ほたて,Sò điệp - L,,,,168000,,2,4,NULL,NULL,NULL
+,SA43,Akagai - S,Arch shell - S,赤貝,Sò lông - S,,,,98000,,2,4,NULL,NULL,NULL
+,SA44,Akagai – L,Arch shell – L,赤貝,Sò lông - L,,,,168000,,2,4,NULL,NULL,NULL
+,SA47,Namagaki,Japanese oyster,日本産生牡蠣,Hào sữa Nhật,,,,78000,,2,4,NULL,NULL,NULL
+,SA48,Namagaki Tobiko,Japanese oyster with flying fish roe,日本産生牡蠣のとびこ添え,Hào sữa Nhật với trứng cá chuồn,,,,98000,,2,4,NULL,NULL,NULL
+,SA49,Namagaki Uni Ikura,Japanese oyster with sea urchin & salmon roe,日本産生牡蠣のうにいくら添え,Hào sữa Nhật với nhum biển và trứng cá hồi,,,,128000,,2,4,NULL,NULL,NULL
+,SA50,Ika otsukuri,Sliced squid sashimi Japanese roll up style,いかのお造り,Mực sashimi cắt mỏng cuộn kiểu Nhật,,,,188000,,2,4,NULL,NULL,NULL
+,SA53,Tsubugai,Japanese whelk,つぶ貝,Ốc xoắn,,,,298000,,2,4,NULL,NULL,NULL
+,SA54,Hokkaido uni,Hokkaido sea urchin,北海道産うに,Nhum biển hokkaido,,,,258000,,2,4,NULL,NULL,NULL
+,SA55,Awabi,Japanese abalone,日本産あわび,Bào ngư Nhật Bản,,,,598000,,2,4,NULL,NULL,NULL
+,SA56,Lobster,Lobster,ロブスター,Tôm hùm,,,,,,2,4,NULL,NULL,NULL
+,SA69,SET SASHIMI A,Mixed sashimi set for 2-3 persons,お刺身セットＡ(４点盛り）,,,,,408000,,2,4,NULL,NULL,NULL
+,SA70,SET SASHIMI B,Mixed sashimi set for 4-6 persons,お刺身セットＢ（６点盛り）,,,,,698000,,2,4,NULL,NULL,NULL
+,SA71,SET SASHIMI C,Mixed sashimi set for 6-8 persons,お刺身セットＣ（９点盛り）,,,,,898000,,2,4,NULL,NULL,NULL
+,,Nama gaki uni,Japanese oyster with sea urchin,日本産生牡蠣のうに添え,Hào sữa Nhật với nhum biển ,,,,98000,,2,4,NULL,NULL,NULL
+,,Uni Canada,Canada sea urchin ,うにカナダ,Nhum biển Canada,,,,325000,,2,4,NULL,NULL,NULL
+,SA57,Maguro tataki,Tuna tataki with ponzu sauce,まぐろのたたき,Tataki cá ngừ sốt ponzu,,,like,158000,,2,4,NULL,NULL,NULL
+,SA58,Sake tataki,Salmon tataki with ponzu sauce,サーモンのたたき,Tataki cá hồi sốt ponzu,,,like,158000,,2,4,NULL,NULL,NULL
+,SA59,Gyu tataki,Beef tataki with ponzu sauce,牛のたたき,Tataki thịt bò sốt ponzu,,,,158000,,2,4,NULL,NULL,NULL
+,SA60,Madai tataki,Sea bream tataki with ponzu sauce,真鯛のたたき,Tataki cá Tráp đỏ sốt ponzu,,,,238000,,2,4,NULL,NULL,NULL
+,SA51,Katsuo tataki,Skipjack tuna tataki,かつおのたたき,Cá ngừ bò tataki,,,,118000,,2,4,NULL,NULL,NULL
+,SA61,Shiromi carpaccio goma sauce,White fish carpaccio with sesame sauce,白身魚のカルパッチョ（ごまソース）,Carpaccio cá trắng sốt mè,,,,168000,,2,4,NULL,NULL,NULL
+,SA62,Maguro carpaccio (spicy ) ,Tuna carpaccio with spicy sauce,まぐろのカルパッチョ （スパイシーソース）,Carpaccio cá ngừ sốt cay,,1,,138000,,2,4,NULL,NULL,NULL
+,SA63,Maguro carpaccio ( house ) ,Tuna carpaccio with  house sauce,まぐろのカルパッチョ （ハウスソース）,Carpaccio cá ngừ sốt đặc biệt,,1,,138000,,2,4,NULL,NULL,NULL
+,SA64,Sake carpaccio (spicy) ,Salmon carpaccio with spicy sauce,サーモンのカルパッチョ （スパイシーソース）,Carpaccio cá hồi sốt cay,,1,,138000,,2,4,NULL,NULL,NULL
+,SA65,Sake carpaccio (house) ,Salmon carpaccio with  house sauce,サーモンのカルパッチョ （ハウスソース）,Carpaccio cá hồi sốt đặc biệt,,1,,138000,,2,4,NULL,NULL,NULL
+,SA66,Carpaccio Moriawase ( Spicy ),Assorted carpaccio with spicy sauce,カルパッチョ盛り合わせ （スパイシーソース）,Carpaccio thập cẩm sốt cay,,1,like,268000,,2,4,NULL,NULL,NULL
+,SA67,Carpaccio Moriawase ( house ),Assorted carpaccio with house sauce,カルパッチョ盛り合わせ （ハウスソース）,Carpaccio thập cẩm sốt đặc biệt,,1,like,268000,,2,4,NULL,NULL,NULL
+,SA68,Foie gras kanpachi carpaccio,Foie gras & yellowtail carpaccio with edamame,フォアグラとかんぱちのカルパッチョ,Carpaccio cá cam và gan ngỗng Pháp với sốt dầu trái cây đặc biệt,,,like,318000,,2,4,NULL,NULL,NULL

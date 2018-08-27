@@ -12,12 +12,17 @@ class News extends Model
 
     protected $table = 'news';
 
-    public $fillable = ['name', 'content', 'url', 'image', 'status', 'createdBy'];
+    public $fillable = ['name', 'content', 'url', 'image', 'status', 'createdBy', 'publishDate', 'name'];
 
     protected $dates = ['deleted_at'];
 
     public function user()
     {
         return $this->hasOne('App\User', 'id', 'createdBy');
+    }
+
+    public function profile()
+    {
+        return $this->hasOne('App\Profile', 'userId', 'createdBy');
     }
 }
