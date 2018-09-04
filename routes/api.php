@@ -94,9 +94,9 @@ Route::group([
         Route::post('create', 'API\UserController@store')->name('createUser');
 
         // Staff
-        // Route::post('staff/create', 'API\StaffController@store')->name('createStaff');
-        // Route::post('staff/update', 'API\StaffController@update')->name('updateStaff');
-        // Route::get('staff', 'API\StaffController@index')->name('staff');
-        // Route::delete('staff/delete/{id}', 'API\StaffController@destroy')->name('deleteStaff');
+        Route::post('staff/create', 'API\StaffController@store')->name('createStaff');
+        Route::post('staff/update', 'API\StaffController@update')->name('updateStaff');
+        Route::get('staff', 'API\StaffController@index')->name('staff');
+        Route::delete('staff/delete/{id}', 'API\StaffController@destroy')->name('deleteStaff');
     });
 });

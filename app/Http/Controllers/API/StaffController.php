@@ -4,6 +4,8 @@ namespace App\Http\Controllers\API;
 
 use App\Staff;
 use App\ProfileStaff;
+use App\User;
+use App\Profile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -23,11 +25,11 @@ class StaffController extends Controller
     public function index()
     {
         //
-        $staffs = Staff::all();
+        $staffs = User::where('roleId', '<>', 1)->get();
 
         foreach ($staffs as $staff) {
             $staff->role;
-            $staff->profile_staff;
+            $staff->profile;
         }
 
         return response()->json([

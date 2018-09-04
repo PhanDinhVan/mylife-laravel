@@ -73,7 +73,7 @@ class UserController extends Controller
 
         $user->email = $request->email;
         $user->password = Hash::make($password);
-        $user->roleId = $request->roleId;
+        $user->roleId = 1;
 
         $user->save();
 
@@ -127,7 +127,7 @@ class UserController extends Controller
         }
 
         $user->status = $r->status;
-        $user->roleId = $r->roleId;
+        // $user->roleId = $r->roleId;
         $user->save();
 
         $profile->name = $r->name;
