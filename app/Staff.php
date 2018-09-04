@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Foundation\Auth\Staff as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class User extends Authenticatable implements JWTSubject
+class Staff extends Authenticatable implements JWTSubject
 {
     use Notifiable;
     use SoftDeletes;
@@ -17,7 +17,7 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var array
      */
-    protected $table = 'users';
+    protected $table = 'staffs';
     protected $fillable = [
         'email', 'password', 'roleId'
     ];
@@ -31,9 +31,9 @@ class User extends Authenticatable implements JWTSubject
         'password'
     ];
 
-    public function profile()
+    public function profile_staff()
     {
-        return $this->hasOne('App\Profile', 'userId', 'id');
+        return $this->hasOne('App\ProfileStaff', 'staffId', 'id');
     }
 
     public function role()

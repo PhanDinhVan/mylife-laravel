@@ -65,7 +65,7 @@ class BookingController extends Controller
         // Validate the request...
         $validatedData = Validator::make($request->all(), [
             'shopId' => 'bail|required|exists:shop,id',
-            'date' => 'required|date_format:d-m-Y',
+            'date' => 'required',
             'time' => 'required|date_format:H:i',
             'numberPerson' => 'required|integer|min:1'
         ]);
@@ -90,6 +90,7 @@ class BookingController extends Controller
                 }
             }
         }
+        $booking->state = $request->status;
         $booking->userId = auth()->user()->id;
 
         $booking->save();
@@ -126,6 +127,7 @@ class BookingController extends Controller
         $validField = $booking->fillable;
 
         $booking->state = $request->status;
+        $booking->time = $request->time;
 
         foreach ($input as $key=>$data) {
             if (in_array($key, $validField)) {
@@ -148,8 +150,15 @@ class BookingController extends Controller
      * @param  \App\Booking  $booking
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Booking $booking)
+    public function destroy($id)
     {
         //
+        $booking = Booking::find($id);
+        if(empty($booking)) {
+          return "not found".$id;
+        }
+        $booking->delete();
+
+        return "success";
     }
 }

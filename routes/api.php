@@ -44,6 +44,9 @@ Route::group([
     });
 
     Route::get('roles', 'RoleController@index')->name('roleIndex');
+    Route::post('roles', 'RoleController@store')->name('createRole');
+    Route::patch('roles/{id}', 'RoleController@update')->name('updateRole');
+    Route::delete('roles/delete/{id}', 'RoleController@destroy')->name('deleteRole');
 
 
     Route::group([
@@ -60,6 +63,7 @@ Route::group([
         Route::get('booking', 'API\BookingController@index')->name('getBooking');
         Route::post('booking', 'API\BookingController@store')->name('createBooking');
         Route::patch('booking/{id}', 'API\BookingController@update')->name('updateSBooking');
+        Route::delete('booking/delete/{id}', 'API\BookingController@destroy')->name('deleteBooking');
 
         // Promotion
         Route::get('promotion', 'API\PromotionController@index')->name('getPromotion');
@@ -69,7 +73,7 @@ Route::group([
         Route::get('news', 'API\NewsController@index')->name('getNews');
         Route::post('news', 'API\NewsController@store')->name('createNews');
         Route::post('update', 'API\NewsController@update')->name('updateNews');
-        Route::delete('delete/{id}', 'API\NewsController@destroy')->name('deleteNews');
+        Route::delete('news/delete/{id}', 'API\NewsController@destroy')->name('deleteNews');
 
         // Menu Category
         Route::post('create-menu-category', 'API\MenuCategoryController@store')->name('createMenuCategory');
@@ -88,5 +92,11 @@ Route::group([
         Route::delete('delete/{id}', 'API\UserController@destroy')->name('deleteUser');
         Route::post('update', 'API\UserController@update')->name('updateUser');
         Route::post('create', 'API\UserController@store')->name('createUser');
+
+        // Staff
+        // Route::post('staff/create', 'API\StaffController@store')->name('createStaff');
+        // Route::post('staff/update', 'API\StaffController@update')->name('updateStaff');
+        // Route::get('staff', 'API\StaffController@index')->name('staff');
+        // Route::delete('staff/delete/{id}', 'API\StaffController@destroy')->name('deleteStaff');
     });
 });
