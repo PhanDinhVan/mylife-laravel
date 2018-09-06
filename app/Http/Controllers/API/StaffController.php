@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Staff;
-use App\ProfileStaff;
 use App\User;
 use App\Profile;
+use App\ShopUser;
+use App\Role;
+use App\Shop;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-use App\Http\Resources\Staff as StaffResource;
+use App\Http\Resources\User as UserResource;
 use Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -47,7 +48,7 @@ class StaffController extends Controller
     {
         // Validate the request...
         $validatedData = Validator::make($request->all(), [
-            'email' => 'bail|required|unique:staffs|max:255',
+            'email' => 'bail|required|unique:users|max:255',
             'name' => 'bail|required'
         ]);
 
@@ -60,45 +61,62 @@ class StaffController extends Controller
         // $roleUser = Role::where('id', $request->roleId)->first();
         $password = str_random(8);
 
-        $staff = $this->createNewStaff($request, $password);
-        $profile_staff =$this->createNewProfileStaff($request, $staff);
+        $user = $this->createNewStaff($request, $password);
+        $profile =$this->createNewProfile($request, $user);
 
-        Mail::to($request->email)->send(new RegisterSuccessfully($staff->email, $password));
+        Mail::to($request->email)->send(new RegisterSuccessfully($user->email, $password));
 
         return response()->json([
-            'staff' => new StaffResource($staff),
-            'profile_staff' => $profile_staff
+            'user' => new UserResource($user),
+            'profile' => $profile
         ]);
     }
 
     private function createNewStaff($request, $password) {
-        $staff = new Staff;
+        $user = new User;
 
-        $staff->email = $request->email;
-        $staff->password = Hash::make($password);
-        $staff->roleId = $request->roleId;
+        $user->email = $request->email;
+        $user->password = Hash::make($password);
+        $user->roleId = $request->roleId;
 
-        $staff->save();
+        $user->save();
 
-        return $staff;
+        return $user;
     }
 
-    private function createNewProfileStaff($request, $staff) {
-       $profile_staff = new ProfileStaff;
+    private function createNewProfile($request, $user) {
+       $profile = new Profile;
 
-        $profile_staff->memberCode = str_random(10);
-        $profile_staff->staffId = $staff->id;
-        $profile_staff->name = $request->name;
-        $profile_staff->avatar = '';
-        $profile_staff->gender = $request->gender;
-        $profile_staff->birthday = new \DateTime($request->birthday);
-        $profile_staff->phone = $request->phone;
-        $profile_staff->nationality = $request->nationality;
+        $profile->memberCode = str_random(10);
+        $profile->userId = $user->id;
+        $profile->name = $request->name;
+        $profile->avatar = '';
+        $profile->gender = $request->gender;
+        $profile->birthday = new \DateTime($request->birthday);
+        $profile->phone = $request->phone;
+        $profile->nationality = $request->nationality;
 
-        $profile_staff->save();
+        $profile->save();
 
-        return $profile_staff;
+        return $profile;
     }
+
+    // private function createShopUser($request, $user) {
+        
+    //     $listRestaurant = $request->restaurant;
+        
+    //     foreach($listRestaurant as $item){
+
+    //       $shop_user = new ShopUser;
+             
+    //       $shop_user->userId = $user->id;
+    //       $shop_user->shopId = $item;
+
+    //       $shop_user->save();
+    //     }
+
+    //     return $shop_user;
+    // }
 
     /**
      * Display the specified resource.
@@ -121,27 +139,27 @@ class StaffController extends Controller
     public function update(Request $r)
     {
         //
-        $staff = Staff::findOrFail($r->id);
-        $profile_staff = ProfileStaff::findOrFail($r->profileStaffId);
+        $user = User::find($r->id);
+        $profile = Profile::find($r->profileId);
 
-        if (empty($staff) && empty($profile_staff)) {
+        if (empty($user) && empty($profile)) {
           return "staff not exits";
         }
 
-        $staff->status = $r->status;
-        $staff->roleId = $r->roleId;
-        $staff->save();
+        $user->status = $r->status;
+        $user->roleId = $r->roleId;
+        $user->save();
 
-        $profile_staff->name = $r->name;
-        $profile_staff->gender = $r->gender;
-        $profile_staff->birthday = $r->birthday;
-        $profile_staff->save();
+        $profile->name = $r->name;
+        $profile->gender = $r->gender;
+        $profile->birthday = $r->birthday;
+        $profile->save();
 
-        $staff->role;
-        $staff->profile_staff;
+        $user->role;
+        $user->profile;
 
         return response()->json([
-            'staff' => $staff
+            'staff' => $user
         ]);
     }
 
@@ -154,15 +172,15 @@ class StaffController extends Controller
     public function destroy($id)
     {
         //
-        $check_staff = Staff::find($id);
-        $check_profile_staff = ProfileStaff::where('staffId', '=', $id)->get();
+        $check_user = User::find($id);
+        $check_profile = Profile::where('userId', '=', $id)->get();
 
-        if ( empty($check_staff) && $check_profile_staff->isEmpty() ) {
+        if ( empty($check_user) && $check_profile->isEmpty() ) {
           return "not found";
         }
 
-        $staff = Staff::find($id)->delete();
-        $profile_staff = ProfileStaff::where('staffId', '=', $id)->delete();
+        $profile = Profile::where('userId', '=', $id)->delete();
+        $user = User::find($id)->delete();
         
         return "succes";
     }

@@ -81,6 +81,12 @@ Route::group([
         // Menu
         Route::post('create-menu', 'API\MenuController@store')->name('createMenu');
         Route::get('get-menu', 'API\MenuController@index')->name('getMenu');
+
+        // Booking Manager
+        Route::get('booking_manager', 'API\BookingManagerController@index')->name('getBookingManager');
+        // Route::post('booking', 'API\BookingController@store')->name('createBooking');
+        // Route::patch('booking/{id}', 'API\BookingController@update')->name('updateSBooking');
+        // Route::delete('booking/delete/{id}', 'API\BookingController@destroy')->name('deleteBooking');
     });
 
     Route::group([
@@ -98,5 +104,6 @@ Route::group([
         Route::post('staff/update', 'API\StaffController@update')->name('updateStaff');
         Route::get('staff', 'API\StaffController@index')->name('staff');
         Route::delete('staff/delete/{id}', 'API\StaffController@destroy')->name('deleteStaff');
+        Route::get('roles', 'API\StaffController@getRoles')->name('getRoles');
     });
 });
