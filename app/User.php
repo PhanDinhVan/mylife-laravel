@@ -41,6 +41,12 @@ class User extends Authenticatable implements JWTSubject
         return $this->hasOne('App\Role', 'id', 'roleId');
     }
 
+    // get user have shop 
+    public function shop_user()
+    {
+        return $this->hasMany('App\ShopUser', 'userId', 'id');
+    }
+
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *

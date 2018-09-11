@@ -15,4 +15,10 @@ class ShopUser extends Model
     public $fillable = ['userId', 'shopId'];
 
     protected $dates = ['deleted_at'];
+
+    // get list shop
+    public function shop(){
+        return $this->belongsTo('App\Shop','shopId','id');
+    }
+
 }

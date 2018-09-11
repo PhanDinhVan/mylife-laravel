@@ -101,23 +101,6 @@ class StaffController extends Controller
         return $profile;
     }
 
-    // private function createShopUser($request, $user) {
-        
-    //     $listRestaurant = $request->restaurant;
-        
-    //     foreach($listRestaurant as $item){
-
-    //       $shop_user = new ShopUser;
-             
-    //       $shop_user->userId = $user->id;
-    //       $shop_user->shopId = $item;
-
-    //       $shop_user->save();
-    //     }
-
-    //     return $shop_user;
-    // }
-
     /**
      * Display the specified resource.
      *
@@ -174,11 +157,13 @@ class StaffController extends Controller
         //
         $check_user = User::find($id);
         $check_profile = Profile::where('userId', '=', $id)->get();
+        $check_shopUser = ShopUser::where('userId', '=', $id)->get();
 
-        if ( empty($check_user) && $check_profile->isEmpty() ) {
+        if ( empty($check_user) && $check_profile->isEmpty() && $check_shopUser->isEmpty() ) {
           return "not found";
         }
 
+        $shopUser = ShopUser::where('userId', '=', $id)->delete();
         $profile = Profile::where('userId', '=', $id)->delete();
         $user = User::find($id)->delete();
         

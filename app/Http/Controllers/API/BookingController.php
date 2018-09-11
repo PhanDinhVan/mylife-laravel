@@ -67,7 +67,7 @@ class BookingController extends Controller
             'shopId' => 'bail|required|exists:shop,id',
             'date' => 'required',
             'time' => 'required|date_format:H:i',
-            'numberPerson' => 'required|integer|min:1'
+            'seats' => 'required|integer|min:1'
         ]);
 
         if ($validatedData->fails()) {

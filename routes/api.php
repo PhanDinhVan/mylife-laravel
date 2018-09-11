@@ -84,8 +84,9 @@ Route::group([
 
         // Booking Manager
         Route::get('booking_manager', 'API\BookingManagerController@index')->name('getBookingManager');
-        // Route::post('booking', 'API\BookingController@store')->name('createBooking');
-        // Route::patch('booking/{id}', 'API\BookingController@update')->name('updateSBooking');
+        Route::post('booking_manager', 'API\BookingManagerController@store')->name('createBookingManager');
+        Route::get('user_booking', 'API\BookingManagerController@userBooking')->name('getUserBooking');
+        Route::patch('booking_manager/{id}', 'API\BookingManagerController@update')->name('updateBookingManager');
         // Route::delete('booking/delete/{id}', 'API\BookingController@destroy')->name('deleteBooking');
     });
 

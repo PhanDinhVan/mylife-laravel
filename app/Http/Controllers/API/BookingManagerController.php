@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Validator;
 use App\ShopUser;
+use App\User;
+use App\Profile;
 
 class BookingManagerController extends Controller
 {
@@ -17,7 +19,39 @@ class BookingManagerController extends Controller
     public function index()
     {
         //
-        $bookings = ShopUser::join('profile', 'shop_user.userId', '=', 'profile.userId')->join('shop', 'shop_user.shopId', '=', 'shop.id')->join('users', 'shop_user.userId', '=', 'users.id')->select('profile.name as fullname', 'shop.name as nameshop', 'shop.address as address', 'shop.district as district', 'shop.city as city')->where('users.roleId',4)->get();
+        // $bookings = ShopUser::join('profile', function($query) {
+        //     $query->on('shop_user.userId', '=', 'profile.userId')
+        //     ->whereNull('profile.deleted_at');
+        // })
+        // ->join('shop', function($query) {
+        //     $query->on('shop_user.shopId', '=', 'shop.id')
+        //     ->whereNull('shop_user.deleted_at');
+        // })
+        // ->join('users', function($query) {
+        //     $query->on('shop_user.userId', '=', 'users.id')
+        //     ->whereNull('users.deleted_at');
+        // })
+        // ->join('roles', 'users.roleId', '=', 'roles.id')
+        // ->select('users.id as userId', 'shop.id as shopId', 'shop_user.id as id','profile.name as fullname', 'shop.name as nameshop', 'shop.address as address', 'shop.district as district', 'shop.city as city')
+        // ->where('roles.name','=','booking')->get();
+
+        // $bookings = User::all();
+
+      $bookings = User::whereHas('shop_user')->get();
+
+         foreach ($bookings as $booking) {
+            $booking->shop_user;
+            foreach ($booking->shop_user as $key => $value) {
+              $value->shop;
+            }
+            $booking->profile;
+        }
+
+        foreach ($bookings as $key => $value) {
+          if(count($value->shop_user) > 0) {
+
+          }
+        }
 
         return response()->json([
             'booking_manager' => $bookings
@@ -33,6 +67,39 @@ class BookingManagerController extends Controller
     public function store(Request $request)
     {
         //
+        $listRestaurant = $request->restaurants;
+        $id = $request->userId;
+
+        $listShopUser = array();
+
+        foreach($listRestaurant as $item){
+
+          $shop_user = ShopUser::firstOrCreate(
+              ['userId' => $id, 'shopId' => $item]
+          );
+             
+          array_push($listShopUser, $shop_user);
+        }
+
+        return $listShopUser;
+    }
+
+    public function userBooking() {
+
+      $user_booking = User::join('profile', function($query) {
+            $query->on('users.id', '=', 'profile.userId')
+            ->whereNull('profile.deleted_at');
+        })
+        ->join('roles', function($query) {
+          $query->on('users.roleId', '=', 'roles.id')
+          ->whereNull('users.deleted_at');
+        })
+        ->select('users.id as id', 'profile.name as username')
+        ->where('roles.name','=','booking')->get();
+
+        return response()->json([
+            'user_booking' => $user_booking
+        ]);
     }
 
     /**
@@ -56,6 +123,20 @@ class BookingManagerController extends Controller
     public function update(Request $request, $id)
     {
         //
+      $listRestaurant = $request->restaurants;
+
+        $listShopUser = array();
+
+        foreach($listRestaurant as $item){
+
+          $shop_user = ShopUser::updateOrCreate(
+              ['userId' => $id, 'shopId' => $item]
+          );
+             
+          array_push($listShopUser, $shop_user);
+        }
+
+        return $listShopUser;
     }
 
     /**
