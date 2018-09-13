@@ -5,19 +5,26 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Booking extends Model
+class Review extends Model
 {
+    //
     use SoftDeletes;
 
-    protected $table = 'booking';
+    protected $table = 'reviews';
 
-    public $fillable = ['userId', 'shopId', 'state', 'date', 'time', 'seats', 'baby_seats', 'extraData'];
+    public $fillable = ['userId', 'shopId', 'score', 'review_date', 'comments', 'created_date'];
 
     protected $dates = ['deleted_at'];
+
 
     public function user()
     {
         return $this->hasOne('App\User', 'id', 'userId');
+    }
+
+    public function profile()
+    {
+        return $this->hasOne('App\Profile', 'userId', 'userId');
     }
 
     public function shop()

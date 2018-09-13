@@ -88,6 +88,17 @@ Route::group([
         Route::get('user_booking', 'API\BookingManagerController@userBooking')->name('getUserBooking');
         Route::patch('booking_manager/{id}', 'API\BookingManagerController@update')->name('updateBookingManager');
         // Route::delete('booking/delete/{id}', 'API\BookingController@destroy')->name('deleteBooking');
+
+        // Review
+        Route::get('review', 'API\ReviewController@index')->name('getReview');
+        Route::post('review', 'API\ReviewController@store')->name('createReview');
+        Route::delete('review/delete/{id}', 'API\ReviewController@destroy')->name('deleteReview');
+
+        // Review Booking Manager
+        Route::get('review_bmanager', 'API\ReviewBookingManagerController@index')->name('getReviewBManager');
+        Route::post('review_bmanager', 'API\ReviewBookingManagerController@store')->name('createReviewBManager');
+        Route::patch('review_bmanager/{id}', 'API\ReviewBookingManagerController@update')->name('updateReviewBookingManager');
+        Route::delete('review_bmanager/delete/{id}', 'API\ReviewBookingManagerController@destroy')->name('deleteReviewBManager');
     });
 
     Route::group([

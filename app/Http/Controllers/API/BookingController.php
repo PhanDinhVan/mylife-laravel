@@ -22,7 +22,9 @@ class BookingController extends Controller
     public function index(Request $request)
     {
         $userId = auth()->user()->id;
+        // Use table company
         $type = $request->get('type', null);
+        $shopId = $request->get('shopId', null);
 
         $booking = [];
 
@@ -30,6 +32,12 @@ class BookingController extends Controller
             $query = Booking::query();
 
             $query = $query->where('userId', $userId);
+            if ($shopId) {
+                $query->whereHas('shop', function ($query) use ($shopId) {
+                    $query->where('shopId', $shopId);
+                });
+            }
+            // Have use table company
             if ($type) {
                 $query->whereHas('shop', function ($query) use ($type) {
                     $query->whereHas('company', function ($query) use ($type) {
@@ -38,7 +46,7 @@ class BookingController extends Controller
                 });
             }
 
-            $booking = $query->orderBy('state', 'asc')->get();
+            $booking = $query->orderBy('date', 'desc')->orderBy('time', 'desc')->get();
 
         } else {
             $booking = Booking::all();

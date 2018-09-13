@@ -19,27 +19,9 @@ class BookingManagerController extends Controller
     public function index()
     {
         //
-        // $bookings = ShopUser::join('profile', function($query) {
-        //     $query->on('shop_user.userId', '=', 'profile.userId')
-        //     ->whereNull('profile.deleted_at');
-        // })
-        // ->join('shop', function($query) {
-        //     $query->on('shop_user.shopId', '=', 'shop.id')
-        //     ->whereNull('shop_user.deleted_at');
-        // })
-        // ->join('users', function($query) {
-        //     $query->on('shop_user.userId', '=', 'users.id')
-        //     ->whereNull('users.deleted_at');
-        // })
-        // ->join('roles', 'users.roleId', '=', 'roles.id')
-        // ->select('users.id as userId', 'shop.id as shopId', 'shop_user.id as id','profile.name as fullname', 'shop.name as nameshop', 'shop.address as address', 'shop.district as district', 'shop.city as city')
-        // ->where('roles.name','=','booking')->get();
-
-        // $bookings = User::all();
-
       $bookings = User::whereHas('shop_user')->get();
 
-         foreach ($bookings as $booking) {
+        foreach ($bookings as $booking) {
             $booking->shop_user;
             foreach ($booking->shop_user as $key => $value) {
               $value->shop;

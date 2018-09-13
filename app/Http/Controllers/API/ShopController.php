@@ -46,6 +46,19 @@ class ShopController extends Controller
     public function store(Request $request)
     {
         //
+        // Validate the request...
+        $validatedData = Validator::make($request->all(), [
+            'name' => 'bail|required|max:255',
+            'address' => 'bail|required'
+        ]);
+
+        if ($validatedData->fails()) {
+            return response()->json([
+                "error" => $validatedData->messages()
+            ])->setStatusCode(422);
+        }
+
+        $shop = new Shop;
     }
 
     /**
