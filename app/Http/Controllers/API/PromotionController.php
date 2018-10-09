@@ -37,11 +37,20 @@ class PromotionController extends Controller
     public function store(Request $request)
     {
         // Validate the request...
+      try {
+        // return $request;
+        return response()->json([
+            'promotion' => $request
+        ]);
+      }catch (\Exception $ex){
+            \Log::info($ex);
+        }
+      
         $validatedData = Validator::make($request->all(), [
             'name'      => 'required',
             'url'       => 'required',
-            // 'startDate' => 'date_format:d-m-Y',
-            // 'endDate'   => 'date_format:d-m-Y'
+            'startDate' => 'date_format:d-m-Y',
+            'endDate'   => 'date_format:d-m-Y'
         ]);
 
         if ($validatedData->fails()) {
@@ -108,9 +117,35 @@ class PromotionController extends Controller
      * @param  \App\Promotion  $promotion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Promotion $promotion)
+    public function update(Request $request, $id)
     {
         //
+        $promotion = Promotion::findOrFail($id);
+
+        if ($request->hasFile('photo')) {
+            $photo = $request->photo;
+
+            $path = 'images/promotion';
+            $filename = $id . '.' . $photo->extension();
+            $photo->storeAs($path, $filename);
+
+            $promotion->image = 'storage/app/public/' . $path . '/' . $filename;
+        }
+
+        $input = $request->all();
+
+        $validField = $promotion->fillable;
+
+        foreach ($input as $key=>$data) {
+            if (in_array($key, $validField)) {
+                $promotion[$key] = $data;
+            }
+        }
+
+        $promotion->save();
+
+        return new PromotionResource($promotion);
+
     }
 
     /**
@@ -119,8 +154,15 @@ class PromotionController extends Controller
      * @param  \App\Promotion  $promotion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Promotion $promotion)
+    public function destroy($id)
     {
         //
+        $promotion = Promotion::find($id);
+        if(empty($promotion)) {
+          return "not found".$id;
+        }
+        $promotion->delete();
+
+        return "success";
     }
 }

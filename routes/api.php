@@ -58,6 +58,7 @@ Route::group([
         // Shop
         Route::get('shop', 'API\ShopController@index')->name('shops');
         Route::patch('shop/{id}', 'API\ShopController@update')->name('updateShops');
+        Route::get('shopBooking', 'API\ShopController@getShopBooking')->name('getShopBooking');
 
         // Booking
         Route::get('booking', 'API\BookingController@index')->name('getBooking');
@@ -68,6 +69,7 @@ Route::group([
         // Promotion
         Route::get('promotion', 'API\PromotionController@index')->name('getPromotion');
         Route::post('promotion', 'API\PromotionController@store')->name('createPromotion');
+        Route::patch('promotion/{id}', 'API\PromotionController@update')->name('updatePromotion');
 
         // News
         Route::get('news', 'API\NewsController@index')->name('getNews');
@@ -87,7 +89,7 @@ Route::group([
         Route::post('booking_manager', 'API\BookingManagerController@store')->name('createBookingManager');
         Route::get('user_booking', 'API\BookingManagerController@userBooking')->name('getUserBooking');
         Route::patch('booking_manager/{id}', 'API\BookingManagerController@update')->name('updateBookingManager');
-        // Route::delete('booking/delete/{id}', 'API\BookingController@destroy')->name('deleteBooking');
+        Route::delete('booking_manager/delete/{id}', 'API\BookingManagerController@destroy')->name('deleteBookingManager');
 
         // Review
         Route::get('review', 'API\ReviewController@index')->name('getReview');
@@ -111,11 +113,11 @@ Route::group([
         Route::post('update', 'API\UserController@update')->name('updateUser');
         Route::post('create', 'API\UserController@store')->name('createUser');
 
-        // Staff
-        Route::post('staff/create', 'API\StaffController@store')->name('createStaff');
-        Route::post('staff/update', 'API\StaffController@update')->name('updateStaff');
-        Route::get('staff', 'API\StaffController@index')->name('staff');
-        Route::delete('staff/delete/{id}', 'API\StaffController@destroy')->name('deleteStaff');
-        Route::get('roles', 'API\StaffController@getRoles')->name('getRoles');
+        // Employee
+        Route::post('employee/create', 'API\EmployeeController@store')->name('createEmployee');
+        Route::post('employee/update', 'API\EmployeeController@update')->name('updateEmployee');
+        Route::get('employee', 'API\EmployeeController@index')->name('getEmployee');
+        Route::delete('employee/delete/{id}', 'API\EmployeeController@destroy')->name('deleteEmployee');
+        Route::get('roles', 'API\EmployeeController@getRoles')->name('getRoles');
     });
 });

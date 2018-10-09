@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
+use App\User;
 use App\Shop;
 use App\Company;
+use App\ShopUser;
 use App\Http\Resources\Shop as ShopResource;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -119,5 +121,33 @@ class ShopController extends Controller
     public function destroy(Shop $shop)
     {
         //
+    }
+
+    public function getShopBooking() {
+        $userId = auth()->user()->id;
+
+        $checkSuperAdmin = User::join('roles', 'roles.id', '=', 'users.roleId')
+                                ->where('users.id', $userId)->get();
+
+        foreach ($checkSuperAdmin as $key => $value) {
+
+          if($value->name == "super admin") {
+            $userbookings = Shop::select('id as shopId')->get();
+
+            // return response()->json([
+            //     'userbookings' => $userbookings
+            // ]);
+          } else {
+            $userbookings = ShopUser::where('userId', $userId)->get();
+
+          }
+          foreach ($userbookings as $userbooking) {
+              $userbooking->shop;
+          }
+
+          return response()->json([
+              'userbookings' => $userbookings
+          ]);
+        }
     }
 }

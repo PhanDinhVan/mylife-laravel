@@ -30,9 +30,9 @@ class BookingManagerController extends Controller
         }
 
         foreach ($bookings as $key => $value) {
-          if(count($value->shop_user) > 0) {
+            if(count($value->shop_user) > 0) {
 
-          }
+            }
         }
 
         return response()->json([
@@ -63,7 +63,9 @@ class BookingManagerController extends Controller
           array_push($listShopUser, $shop_user);
         }
 
-        return $listShopUser;
+        return response()->json([
+            'listShopUser' => $listShopUser
+        ]);
     }
 
     public function userBooking() {
@@ -105,20 +107,42 @@ class BookingManagerController extends Controller
     public function update(Request $request, $id)
     {
         //
-      $listRestaurant = $request->restaurants;
+        $listNewShop = $request->restaurants;
+        $listOldShop = array();
 
-        $listShopUser = array();
-
-        foreach($listRestaurant as $item){
-
-          $shop_user = ShopUser::updateOrCreate(
-              ['userId' => $id, 'shopId' => $item]
-          );
-             
-          array_push($listShopUser, $shop_user);
+        $listShopId = ShopUser::select('shopId')->where('userId', $id)->get();
+        foreach($listShopId as $item){
+          array_push($listOldShop, $item->shopId);
         }
 
-        return $listShopUser;
+        // $resultUpdate = array_intersect($listOldShop, $listNewShop);
+        $resultDelete = array_diff($listOldShop, $listNewShop);
+        $resultCreate = array_diff($listNewShop, $listOldShop);
+
+        
+        if ($resultDelete) {
+          $listDelete = ShopUser::where('userId', $id)->whereIn('shopId', $resultDelete)->delete();
+        }
+
+        if ($resultCreate) {
+          foreach ($resultCreate as $value) {
+            $shop_user = ShopUser::firstOrCreate(
+                  ['userId' => $id, 'shopId' => $value]
+            );
+            $shop_user->save();
+          }
+        }
+
+        // if ($resultUpdate) {
+        //   foreach ($resultUpdate as $value) {
+        //     $shop_user = ShopUser::updateOrCreate(
+        //           ['userId' => $id, 'shopId' => $value]
+        //     );
+        //     $shop_user->save();
+        //   }
+        // }
+
+        return "success";
     }
 
     /**
@@ -130,5 +154,12 @@ class BookingManagerController extends Controller
     public function destroy($id)
     {
         //
+        $booking_manager = ShopUser::where('userId', $id)->get();
+        if(empty($booking_manager)) {
+          return "not found";
+        }
+        $booking_manager = ShopUser::where('userId', $id)->delete();
+
+        return "success";
     }
 }

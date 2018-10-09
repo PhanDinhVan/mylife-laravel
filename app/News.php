@@ -12,7 +12,7 @@ class News extends Model
 
     protected $table = 'news';
 
-    public $fillable = ['name', 'content', 'url', 'image', 'status', 'createdBy', 'publishDate', 'name'];
+    public $fillable = ['name', 'content', 'url', 'image', 'status', 'createdBy', 'publishDate', 'userName'];
 
     protected $dates = ['deleted_at'];
 

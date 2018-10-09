@@ -18,7 +18,7 @@ class NewsController extends Controller
     public function index()
     {
         $curent_date = date('Y-m-d', time());
-        $news = News::where('status', 'publish')->whereDate('publishDate', '<=' ,$curent_date)->get();
+        $news = News::where('status', 'publish')->whereDate('publishDate', '<=' ,$curent_date)->orderBy('publishDate', 'desc')->orderBy('id', 'desc')->get();
 
         foreach ($news as $item) {
             $item->user;
@@ -48,18 +48,6 @@ class NewsController extends Controller
             ])->setStatusCode(422);
         }
 
-        $input = $request->all();
-
-        $news = new News();
-        $validField = $news->fillable;
-
-        foreach ($input as $key=>$data) {
-            if (in_array($key, $validField)) {
-                $news[$key] = $data;
-            }
-        }
-        $news->createdBy = auth()->user()->id;
-
         if ($request->hasFile('photo')) {
             $photo = $request->photo;
 
@@ -70,7 +58,27 @@ class NewsController extends Controller
             $news->image = 'storage/app/public/' . $path . '/' . $filename;
         }
 
-        $news->save();
+        $news = new News();
+
+        try {
+
+            $input = $request->all();
+
+            
+            $validField = $news->fillable;
+
+            foreach ($input as $key=>$data) {
+                if (in_array($key, $validField)) {
+                    $news[$key] = $data;
+                }
+            }
+            $news->createdBy = auth()->user()->id;
+
+            $news->save();
+        }
+        catch (\Exception $e) {
+            return $e->getMessage();
+        }
 
         return response()->json([
             'news' => $news

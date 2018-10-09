@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Role;
 use App\Http\Resources\User as UserResource;
 
 class AuthController extends Controller
@@ -32,7 +34,12 @@ class AuthController extends Controller
 
         $user = auth()->user();
 
-        return $this->respondUserWithToken(new UserResource($user), $token);
+        $userId = auth()->user()->id;
+        $roleName = User::select('roles.name as roleName')
+                            ->join('roles', 'users.roleId', '=', 'roles.id')
+                            ->where('users.id', $userId)->first();
+
+        return $this->respondUserWithToken(new UserResource($user), $token, $roleName);
     }
 
     /**
@@ -83,13 +90,14 @@ class AuthController extends Controller
         ]);
     }
 
-    protected function respondUserWithToken($user, $token)
+    protected function respondUserWithToken($user, $token, $roleName)
     {
         return response()->json([
             'user' => $user,
             'access_token' => $token,
             'token_type' => 'bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth()->factory()->getTTL() * 60,
+            'roleName' => $roleName
         ]);
     }
 }

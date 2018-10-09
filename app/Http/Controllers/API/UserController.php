@@ -22,7 +22,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::where('roleId', 1)->get();
+        // $userId = auth()->user()->id;
+        $users = User::where('roleId', 1)->orderBy('id', 'desc')->get();
 
         foreach ($users as $user) {
             $user->role;
@@ -133,6 +134,7 @@ class UserController extends Controller
         $profile->name = $r->name;
         $profile->gender = $r->gender;
         $profile->birthday = $r->birthday;
+        $profile->phone = $r->phone;
         $profile->save();
 
         return "succes";

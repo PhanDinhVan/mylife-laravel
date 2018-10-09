@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\API;
 
 use App\User;
-use App\Profile;
-use App\ShopUser;
 use App\Role;
 use App\Shop;
+use App\Profile;
+use App\ShopUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\RegisterSuccessfully;
 
-class StaffController extends Controller
+class EmployeeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,15 +26,15 @@ class StaffController extends Controller
     public function index()
     {
         //
-        $staffs = User::where('roleId', '<>', 1)->get();
+        $employees = User::where('roleId', '<>', 1)->orderBy('id', 'desc')->get();
 
-        foreach ($staffs as $staff) {
-            $staff->role;
-            $staff->profile;
+        foreach ($employees as $employee) {
+            $employee->role;
+            $employee->profile;
         }
 
         return response()->json([
-            'staffs' => $staffs
+            'employees' => $employees
         ]);
     }
 

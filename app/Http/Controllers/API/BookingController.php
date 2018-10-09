@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\API;
 
 use Validator;
+use App\User;
 use App\Booking;
+use App\ShopUser;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -22,6 +24,36 @@ class BookingController extends Controller
     public function index(Request $request)
     {
         $userId = auth()->user()->id;
+
+        $checkSuperAdmin = User::join('roles', 'roles.id', '=', 'users.roleId')
+                                ->where('users.id', $userId)->get();
+        foreach ($checkSuperAdmin as $key => $value) {
+
+          if($value->name == "super admin") {
+            $booking = Booking::orderBy('date', 'desc')->orderBy('time', 'desc')->get();
+
+          } else if($value->name == "booking") {
+
+            $shop_user = ShopUser::select('shopId')->where('userId', $userId)->get();
+            $array_shopId = array();
+            foreach ($shop_user as $key => $item) {
+              array_push($array_shopId, $item->shopId);
+            }
+
+            $booking = Booking::whereIn('shopId', $array_shopId)
+                                ->orderBy('date', 'desc')->orderBy('time', 'desc')->get();
+          }
+
+          foreach ($booking as $book) {
+              $book->user;
+              $book->shop;
+              $book->profile;
+          }
+          return response()->json([
+              'booking' => $booking
+          ]);
+        }
+
         // Use table company
         $type = $request->get('type', null);
         $shopId = $request->get('shopId', null);
@@ -32,6 +64,7 @@ class BookingController extends Controller
             $query = Booking::query();
 
             $query = $query->where('userId', $userId);
+            
             if ($shopId) {
                 $query->whereHas('shop', function ($query) use ($shopId) {
                     $query->where('shopId', $shopId);
